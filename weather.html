@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="weather-animation"></div>
+
+<div class="container">
+
+    <div class="top-bar">
+        <h1>🌤 Weather Dashboard</h1>
+
+        <button id="themeToggle">
+            🌙 Dark Mode
+        </button>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="locationInput"
+            placeholder="Enter City Name..."
+        >
+
+        <button id="searchBtn">
+            Search
+        </button>
+
+    </div>
+
+    <div class="current-weather glass">
+
+        <h2 id="city">Loading...</h2>
+
+        <div class="temp">
+            <span id="temp">--</span>°C
+        </div>
+
+        <div id="condition">
+            Weather Condition
+        </div>
+
+        <div class="weather-details">
+
+            <div class="card">
+                <h4>Humidity</h4>
+                <p id="humidity">--%</p>
+            </div>
+
+            <div class="card">
+                <h4>Wind Speed</h4>
+                <p id="wind">-- km/h</p>
+            </div>
+
+            <div class="card">
+                <h4>Latitude</h4>
+                <p id="lat">--</p>
+            </div>
+
+            <div class="card">
+                <h4>Longitude</h4>
+                <p id="lon">--</p>
+            </div>
+
+            <div class="card">
+                <h4>DBT</h4>
+                <p id="dbt">-- °C</p>
+            </div>
+
+            <div class="card">
+                <h4>WBT</h4>
+                <p id="wbt">-- °C</p>
+            </div>
+
+            <div class="card">
+                <h4>Sunrise</h4>
+                <p id="sunrise">--</p>
+            </div>
+
+            <div class="card">
+                <h4>Sunset</h4>
+                <p id="sunset">--</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="forecast-section glass">
+
+        <h2>24 Hour Forecast</h2>
+
+        <div id="hourlyForecast" class="hourly-container">
+
+        </div>
+
+    </div>
+
+    <div class="forecast-section glass">
+
+        <h2>7 Day Forecast</h2>
+
+        <div id="dailyForecast" class="daily-container">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
