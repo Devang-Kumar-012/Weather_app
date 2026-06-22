@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+    transition:0.4s;
+}
+
+body.light{
+    background:#f8fafc;
+    color:#111827;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    padding:30px;
+    position:relative;
+    z-index:10;
+}
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.top-bar h1{
+    font-size:2rem;
+}
+
+#themeToggle{
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    font-size:16px;
+}
+
+.search-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:#06b6d4;
+    color:white;
+    font-weight:bold;
+}
+
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+body.light .glass{
+    background:rgba(255,255,255,0.7);
+}
+
+.temp{
+    font-size:5rem;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.weather-details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.hourly-container{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    padding-top:15px;
+}
+
+.hour-card{
+    min-width:130px;
+    text-align:center;
+    background:rgba(255,255,255,0.06);
+    padding:15px;
+    border-radius:15px;
+}
+
+.daily-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.day-card{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+#weather-animation{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+#weather-animation::before{
+    content:"";
+    position:absolute;
+    width:300%;
+    height:300%;
+    background:
+    radial-gradient(circle,rgba(255,255,255,.3) 1px,transparent 2px);
+    animation:animeSky 60s linear infinite;
+}
+
+@keyframes animeSky{
+    from{
+        transform:translateX(-20%);
+    }
+    to{
+        transform:translateX(20%);
+    }
+}
+
+::-webkit-scrollbar{
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#06b6d4;
+    border-radius:10px;
+}
